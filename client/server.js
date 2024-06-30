@@ -21,6 +21,8 @@ mongoose.connect("mongodb+srv://shahul123:shahul123@mernauth.gjvajxp.mongodb.net
 
 app.use(express.json());
 
+app.use(cors({origin: "*"}))
+
 app.post('/register', async (req, res) => {
     try {
         const {username, email, password, confirmpassword} = req.body;
@@ -89,6 +91,6 @@ app.get('/myprofile', middleware, async(req, res) => {
   }
 })
 
-app.listen(5000, () => {
+app.listen(3000, () => {
   console.log('server running.....')
 });
